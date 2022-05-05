@@ -5,3 +5,4 @@ with several cloud providers.
 
 * Outscale
   - [SNS EVA High Availibility cluster](outscale/ha-cluster)
+  - [SNS EVA High Availibility cluster in an existing VPC](outscale/ha-cluster-existing-vpc)
