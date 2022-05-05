@@ -1,0 +1,40 @@
+access_key_id = "xxxxxxxxxxx"
+secret_key_id = "yyyyyyyyyyy"
+region        = "eu-west-2"
+zone          = "a"
+
+project_name = "HA"
+
+
+vpc_network    = "10.0.0.0/16"
+public_subnet  = "10.0.0.0/24"
+hasync_subnet  = "10.0.2.0/24"
+private_subnet = "10.0.1.0/24"
+
+gateway_ip = "10.0.0.1"
+
+eva1_public_ip  = "10.0.0.11"
+eva1_sync_ip    = "10.0.2.11"
+eva1_private_ip = "10.0.1.11"
+
+eva2_public_ip  = "10.0.0.12"
+eva2_sync_ip    = "10.0.2.12"
+eva2_private_ip = "10.0.1.12"
+
+eva_mask = "255.255.255.0"
+
+eva_password = "Changeme!"
+
+server_ip = "10.0.1.100"
+
+public_secondary_ip  = "10.0.0.13"
+private_secondary_ip = "10.0.1.13"
+
+server_private_ip = "10.0.2.200"
+
+eva_omi        = "ami-3f19abad"
+eva_vm_type    = "tinav4.c1r1p2"
+ubuntu_omi     = "ami-bb490c7e"
+ubuntu_vm_type = "tinav4.c1r1p2"
+
+keypair = "<keypair name>"
