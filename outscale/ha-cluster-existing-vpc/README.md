@@ -18,11 +18,12 @@ This Terraform script deploys a SNS EVA high availability cluster on Outscale in
 
 > `$ cp terraform.tfvars.example terraform.tfvars`
  
-* add your Outscale access key/secret and key pair name to terraform.tfvars
-* configure three networks:
+* Add your Outscale access key/secret and key pair name to terraform.tfvars
+* Configure the three subnets:
   - Public : Internet facing subnet
   - Private: subnet with the assets to protect
   - Sync: subnet dedicated to appliances synchronisation
+* Configure the ip addresses according to the subnet networks
 
 ## Deployment
 
@@ -33,7 +34,7 @@ $ terraform apply
 
 Note: The two apply commands are necessary for the source/dest check parameter.
 
-Terraform outputs the main eip of the cluster and the temporary eip for the second EVA VM.
+Terraform outputs the main EIP of the cluster and the temporary EIP for the second EVA VM.
 
 ## Cluster creation
 
