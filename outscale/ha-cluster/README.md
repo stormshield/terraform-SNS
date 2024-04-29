@@ -10,6 +10,7 @@ This Terraform script deploys a SNS EVA high availability cluster on Outscale in
 
 * Terraform
 * Outscale Terraform Provider
+* SNS version 4.7.1 or greater
 
 ##  Configuration 
 
@@ -38,12 +39,12 @@ Terraform outputs the main eip of the cluster and the temporary eip for the seco
 * Connect to both VM web gui to install licences/init kit.
 * Create the HA cluster on the first EVA VM via the CLI.
 ```
- > CONFIG HA CREATE ifname=sync password=<secretpassword>
+ > CONFIG HA CREATE ifname=sync password=<secretpassword> Unicast=1 SynchronizeMacAddress=0
  100 code=00101e00 msg="Success"
  > CONFIG HA activate
  100 code=00a00100 msg="Ok"
 ```
-* Delete the forced mac address from the configuration. Via SSH access edit `/usr/Firewall/ConfigFiles/network` file and delete or comment the `MacAddress` tokens of the `ethernet0` and `ethernet2` sections.
+* For firmware version lesser than 4.7.1, the Unicast and SynchronizeMacAddress options don't exist. It is necessary to delete the forced mac address from the configuration. Via SSH access edit `/usr/Firewall/ConfigFiles/network` file and delete or comment the `MacAddress` tokens of the `ethernet0` and `ethernet2` sections.
 
 * Connect to the second EVA VM via the web gui and join the cluster on EVA2
  ```
